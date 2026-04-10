@@ -1,0 +1,97 @@
+name: "\U0001F0CF Card Data Issue"
+description: Report incorrect pricing, missing cards, or wrong card information
+title: "[CARD DATA] "
+labels:
+  - card data
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report an issue with card data (pricing, images, metadata, or missing cards).
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      description: What kind of card data issue is this?
+      options:
+        - Incorrect Pricing
+        - Missing Card
+        - Wrong Image
+        - Wrong Card Info/Metadata
+        - Outdated Data
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: card_name
+    attributes:
+      label: Card Name
+      description: The full name of the affected card
+      placeholder: "e.g., Cloud"
+    validations:
+      required: true
+
+  - type: input
+    id: serial_number
+    attributes:
+      label: Serial Number
+      description: The card's serial number if known
+      placeholder: "e.g., 1-001H"
+    validations:
+      required: false
+
+  - type: input
+    id: set_name
+    attributes:
+      label: Set Name
+      description: The set the card belongs to
+      placeholder: "e.g., Opus I"
+    validations:
+      required: false
+
+  - type: textarea
+    id: whats_wrong
+    attributes:
+      label: What's Wrong?
+      description: Describe the data issue you're seeing
+      placeholder: |
+        The card Cloud (1-001H) is showing the wrong power value...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_data
+    attributes:
+      label: Expected Data
+      description: What the correct data should be
+      placeholder: |
+        The correct power should be 8000...
+    validations:
+      required: true
+
+  - type: input
+    id: source_reference
+    attributes:
+      label: Source/Reference
+      description: Link to an official source with the correct data
+      placeholder: "e.g., https://fftcg.square-enix-games.com/en/card-browser"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, drag and drop screenshots showing the incorrect data
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other information that might help
+    validations:
+      required: false

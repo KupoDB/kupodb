@@ -1,0 +1,87 @@
+name: "\u2728 Feature Request"
+description: Suggest a new feature or enhancement for KupoDB
+title: "[FEATURE] "
+labels:
+  - feat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please help us understand your use case.
+
+        Before submitting, please check if this feature has already been requested by searching [existing requests](https://github.com/KupoDB/kupodb/issues?q=is%3Aissue+label%3Afeat).
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight Checklist
+      options:
+        - label: I have searched [existing requests](https://github.com/KupoDB/kupodb/issues?q=is%3Aissue+label%3Afeat+label%3Aenhancement) and this feature hasn't been requested yet
+          required: true
+        - label: This is a single feature request (not multiple features)
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem are you trying to solve? Focus on the problem, not the solution.
+      placeholder: |
+        I need to look up cards by their Japanese name, but the API only supports English name search...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this to work?
+      placeholder: |
+        I'd like the search endpoint to accept Japanese text and match against name_ja...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: What alternatives have you considered or tried?
+      placeholder: |
+        Currently I have to look up the English name first and then search...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: feature_area
+    attributes:
+      label: Feature Area
+      description: What area does this feature relate to?
+      options:
+        - API
+        - Card Search
+        - Card Data
+        - Website
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case Example
+      description: Provide a concrete, real-world scenario of when you'd use this feature.
+      placeholder: |
+        1. I'm building a Japanese FFTCG deck tracker
+        2. I want to search for cards using their Japanese names
+        3. With this feature I could...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Examples, links to similar features in other APIs, etc.
+    validations:
+      required: false
